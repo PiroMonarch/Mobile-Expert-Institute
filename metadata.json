@@ -1,0 +1,6 @@
+{
+  "name": "Mobile Expert Institute",
+  "description": "Professional mobile phone repairing training institute in Butler Plaza, Civil Lines, Bareilly, Uttar Pradesh. Practical hands-on training, motherboard diagnostics, SMD rework, and chip-level technical education.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
