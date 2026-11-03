@@ -12,6 +12,13 @@ export interface CourseOverview {
   title: string;
   tagline: string;
   description: string;
+  duration: string;
+  fee: string;
+  originalFee?: string;
+  earningPotential: string;
+  certification: string;
+  posterImage: string;
+  highlights: string[];
   placeholders: {
     feeStatus: string;
     feeNote: string;
@@ -26,20 +33,34 @@ export interface CourseOverview {
 }
 
 export const COURSE_OVERVIEW: CourseOverview = {
-  title: "Practical Mobile Hardware Repairing Program",
-  tagline: "Live demonstrations on real devices, hands-on workbench practice, and step-by-step circuitry diagnostics.",
+  title: "Complete 2-Month Mobile Phone Repairing Course",
+  tagline: "Master practical mobile phone repairing in 2 months and unlock ₹50,000 to ₹60,000 monthly earning potential — special admission offer at ₹14,990/-!",
   description:
-    "Designed for both beginners entering the mobile electronics trade and practicing technicians aiming to master advanced micro-soldering, SMD rework, and motherboard tracing. The curriculum prioritizes physical workbench practice over rote theory.",
+    "Comprehensive 2-month hands-on practical training program at Mobile Expert Institute, A-6 Butler Plaza, Bareilly. Master complete smartphone hardware diagnostics, SMD micro-soldering, CPU & eMMC reballing, and live PCB troubleshooting on actual customer boards.",
+  duration: "2 Months (60 Days Practical Lab)",
+  fee: "₹14,990 / ₹15,000",
+  originalFee: "₹15,000",
+  earningPotential: "₹50,000 – ₹60,000 / Month",
+  certification: "ISO 9001:2015 Certified Institute",
+  posterImage: "/assets/aistudio/image_7869c187.png",
+  highlights: [
+    "Professional Trainer Guidance with live step-by-step demonstrations",
+    "100% Practical Training on real phone motherboards & live devices",
+    "ISO 9001:2015 Certified Institute Course Certificate",
+    "High Income Opportunity: ₹50,000 to ₹60,000 monthly earning potential",
+    "Dedicated MC75T Stereo Microscopes & BABA TOOLS stations for every student",
+    "Comprehensive schematic circuit tracing and short-circuit troubleshooting",
+  ],
   placeholders: {
-    feeStatus: "Fee structure provided on institute visit / enquiry",
-    feeNote: "Course fees vary depending on module selection (Basic, Advanced Chip-level, or Complete Master Track). Contact the institute for current fee structures.",
-    durationStatus: "Customizable duration (Modular batches)",
-    durationNote: "Self-paced and structured practical schedules available. Confirm exact duration at enrollment.",
-    batchSizeStatus: "Limited practical bench seats per batch",
-    batchSizeNote: "Ensures every student gets direct access to microscopes, soldering stations, and instructor oversight.",
-    timingsStatus: "Morning & Evening practical shifts",
-    timingsNote: "Batch timings designed to accommodate local and outstation students travelling from surrounding districts.",
-    admissionStatus: "Admissions open for upcoming monthly practical batch",
+    feeStatus: "₹14,990 / ₹15,000 (Complete Course)",
+    feeNote: "All-inclusive course fee covering hardware lab access, BGA stencils, consumables, practice PCBs, and ISO certification.",
+    durationStatus: "2 Months (Daily Hands-On Shifts)",
+    durationNote: "Intensive 60-day practical program taking you from electronic fundamentals to chip-level CPU reballing.",
+    batchSizeStatus: "Limited Seats Per Batch",
+    batchSizeNote: "Small batch size guarantees direct access to optical microscopes, hot air rework stations, and personal instructor doubt-clearing.",
+    timingsStatus: "Morning & Evening Practical Shifts",
+    timingsNote: "Designed to facilitate learners travelling from Chandausi, Jayatipur, Faridpur, Tilhar, and across Bareilly.",
+    admissionStatus: "Admissions Open — Limited Seats Hurry Up!",
   },
 };
 

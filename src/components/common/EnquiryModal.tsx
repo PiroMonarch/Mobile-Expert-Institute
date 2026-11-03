@@ -135,6 +135,25 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                     </button>
                   ))}
                 </div>
+
+                {formData.enquiryType === "training" && (
+                  <div className="mt-2.5 p-3 rounded-xl bg-gradient-to-r from-amber-950/60 to-cyan-950/60 border border-amber-800/60 flex items-center justify-between text-xs">
+                    <div>
+                      <div className="font-bold text-amber-300 flex items-center gap-1.5">
+                        <span>2-Month Practical Course</span>
+                        <span className="text-[10px] font-mono px-1.5 py-0.2 bg-amber-400 text-neutral-950 rounded font-bold">
+                          Offer: ₹14,990/-
+                        </span>
+                      </div>
+                      <p className="text-[11px] text-neutral-300 mt-0.5">
+                        ₹50,000–₹60,000/mo earning potential · 100% Practical Training
+                      </p>
+                    </div>
+                    <span className="text-[10px] font-mono text-cyan-300 uppercase px-2 py-0.5 rounded bg-black/60 border border-cyan-800 shrink-0 ml-2">
+                      ISO 9001:2015
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Full Name */}

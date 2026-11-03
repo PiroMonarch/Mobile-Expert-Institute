@@ -41,6 +41,17 @@ export interface InstituteRealPhoto {
 
 export const INSTITUTE_REAL_PHOTOS: InstituteRealPhoto[] = [
   {
+    id: "course-admission-poster",
+    url: "/assets/aistudio/image_7869c187.png",
+    title: "Official 2-Month Course Poster (₹14,990 / ₹15,000)",
+    category: "Classroom Batch",
+    caption: "Learn mobile phone repairing in 2 months and unlock ₹50,000 to ₹60,000 monthly income potential — special offer at ₹14,990/-!",
+    description: "Official admission announcement for Mobile Expert Institute, A-6 Butler Plaza, Bareilly. ISO 9001:2015 certified, 100% practical training on real boards, professional instructors, and ₹50,000–₹60,000/month earning potential.",
+    location: "A-6, Butler Plaza, Bareilly",
+    tag: "2-Month Course · ₹14,990",
+    features: ["2 Months Duration", "₹14,990 Special Offer", "Earn ₹50K-₹60K/Month", "ISO 9001:2015 Certified"],
+  },
+  {
     id: "master-institute-bench",
     url: "/assets/aistudio/IMG20260713132423_d2950045.jpg",
     title: "Master Laboratory & Illuminated Wall Signage",
@@ -298,6 +309,7 @@ export const BRAND_ASSETS = {
   logoMark: "/assets/brand/logo-mark.png",
   logoCyanRing: "/assets/brand/logo-cyan-ring.png",
   sourceBanner: "/assets/aistudio/MOBILE_EXPERT_INSTITUTE__1__195f65a2.jpg",
+  admissionPoster: "/assets/aistudio/image_7869c187.png",
 };
 
 export interface HardwareModuleCard {

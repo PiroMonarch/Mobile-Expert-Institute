@@ -23,6 +23,10 @@ export interface InstituteConfig {
     landmark: string;
   };
   contact: {
+    primaryPhone: string;
+    primaryPhoneRaw: string;
+    secondaryPhone: string;
+    secondaryPhoneRaw: string;
     phonePlaceholder: string;
     phoneDisplay: string;
     whatsappNumber: string; // international digits format e.g. 919876543210
@@ -67,8 +71,12 @@ export const INSTITUTE_CONFIG: InstituteConfig = {
     landmark: "Centrally located at Butler Plaza commercial complex in Civil Lines, Bareilly",
   },
   contact: {
+    primaryPhone: "+91 97586 52851",
+    primaryPhoneRaw: "9758652851",
+    secondaryPhone: "+91 63954 68506",
+    secondaryPhoneRaw: "6395468506",
     phonePlaceholder: "+91 97586 52851",
-    phoneDisplay: "+91 97586 52851 / 97205 41345",
+    phoneDisplay: "+91 97586 52851 / 6395468506",
     whatsappNumber: "919758652851",
     whatsappDisplay: "+91 97586 52851",
     emailPlaceholder: "admissions@mobileexpertbareilly.in",

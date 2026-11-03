@@ -350,16 +350,28 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenEnquiry })
             </div>
 
             <div className="p-6 space-y-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-amber-400 text-neutral-950 shadow">
+                  Special Offer: ₹14,990/-
+                </span>
+                <span className="text-[11px] font-mono font-bold px-2 py-0.5 rounded-full bg-cyan-950 text-cyan-300 border border-cyan-800">
+                  2 Months Course
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800">
+                  ISO 9001:2015
+                </span>
+              </div>
+
               <h3 className="text-xl font-bold text-white">
-                Hands-On Mobile Repairing Training
+                Complete 2-Month Mobile Repairing Training
               </h3>
               <p className="text-sm text-neutral-400 leading-relaxed">
-                Step-by-step guidance on real smartphone motherboards. Practice SMD soldering, schematic diagram tracing, and IC reballing.
+                Step-by-step guidance on real smartphone motherboards. Learn mobile phone repairing in 2 months and unlock ₹50,000 to ₹60,000 monthly income potential with 100% practical workbench training.
               </p>
 
               {/* Quick tags */}
               <div className="flex flex-wrap gap-1.5 pt-1">
-                {["Live Phone Boards", "Microscope Workstations", "Double Decker CPU", "Doubt Clearing"].map((item, i) => (
+                {["2 Months Duration", "Fee: ₹14,990 / ₹15,000", "Live Phone Boards", "MC75T Microscope Bench", "ISO 9001:2015 Certified"].map((item, i) => (
                   <span
                     key={i}
                     className="inline-flex items-center gap-1.5 text-[11px] font-medium text-neutral-300 bg-neutral-900 border border-neutral-800 px-2.5 py-1 rounded-md"

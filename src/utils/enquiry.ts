@@ -120,11 +120,11 @@ export function buildStudentAdmissionWhatsAppUrl(
   targetNumber: string = INSTITUTE_CONFIG.contact.whatsappNumber
 ): string {
   const courseLabels: Record<CourseInterest, string> = {
-    "complete-course": "Complete Practical Mobile Repairing Course",
-    "chip-level-smd": "Advanced Chip-Level & SMD Micro-Soldering",
-    "motherboard-cpu": "Motherboard Diagnostics & CPU/BGA Reballing",
+    "complete-course": "Complete 2-Month Practical Mobile Repairing Course (₹14,990 / ₹15,000)",
+    "chip-level-smd": "Advanced Chip-Level & SMD Micro-Soldering (2-Month Batch)",
+    "motherboard-cpu": "Motherboard Diagnostics & CPU/BGA Reballing (2-Month Batch)",
     "basic-hardware": "Mobile Hardware Fundamentals & Disassembly",
-    "general-admission": "General Batch Timings & Admission Enquiry",
+    "general-admission": "2-Month Course Admission Enquiry (₹14,990)",
   };
 
   const lines = [

@@ -20,6 +20,11 @@ import {
   MapPin,
   Camera,
   Layers,
+  Award,
+  TrendingUp,
+  Handshake,
+  ShieldCheck,
+  PhoneCall,
 } from "lucide-react";
 import { COURSE_MODULES, COURSE_OVERVIEW, COURSE_FAQS } from "../data/courses";
 import {
@@ -248,48 +253,207 @@ export const TrainingPage: React.FC<TrainingPageProps> = ({ onOpenEnquiry }) => 
       </section>
 
       {/* ==============================================================
-          2. COURSE LOGISTICS OVERVIEW (CONCISE CARDS)
+          2. OFFICIAL 2-MONTH COURSE & ADMISSION SHOWCASE (POSTER & DETAILS)
           ============================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div {...fadeInUp} className="bg-[#0e111a] rounded-2xl border border-neutral-800 p-6 sm:p-8 shadow-md space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-neutral-800/80 pb-5">
-            <div>
-              <h2 className="text-lg font-bold text-white">
-                Course Logistics & Admission Structure
-              </h2>
-              <p className="text-xs text-neutral-400 mt-0.5">
-                Transparent information regarding enrollment, duration, and laboratory access
+        <motion.div
+          {...fadeInUp}
+          className="rounded-3xl bg-gradient-to-br from-[#0c0f17] via-[#090b12] to-[#07080b] border border-cyan-500/30 p-6 sm:p-10 shadow-[0_0_35px_rgba(0,229,255,0.08)] relative overflow-hidden"
+        >
+          {/* Subtle glowing accents */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Official Poster Card (5 cols) */}
+            <div className="lg:col-span-5 flex flex-col items-center">
+              <div
+                onClick={() => {
+                  const poster = INSTITUTE_REAL_PHOTOS.find((p) => p.id === "course-admission-poster");
+                  if (poster) setSelectedPhoto(poster);
+                }}
+                className="group relative rounded-2xl overflow-hidden bg-black border-2 border-cyan-400/50 hover:border-cyan-400 shadow-[0_0_25px_rgba(0,229,255,0.25)] transition-all cursor-pointer max-w-sm w-full"
+              >
+                <img
+                  src="/assets/aistudio/image_7869c187.png"
+                  alt="Learn Mobile Phone Repairing in 2 Months - Mobile Expert Institute Admission Poster"
+                  className="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-300"
+                />
+                
+                {/* Floating Inspection Badge */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <span className="text-[10px] font-mono text-cyan-300 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800 font-bold uppercase">
+                        Official Admission Notice
+                      </span>
+                      <p className="text-xs text-white font-semibold mt-1">
+                        Click to view high-resolution poster
+                      </p>
+                    </div>
+                    <span className="p-2 rounded-full bg-cyan-400 text-neutral-950 shadow-md group-hover:scale-110 transition-transform">
+                      <Maximize2 className="w-4 h-4" />
+                    </span>
+                  </div>
+                </div>
+
+                <div className="absolute top-3 left-3">
+                  <span className="text-[10px] font-bold text-neutral-950 bg-gradient-to-r from-amber-400 to-amber-500 px-2.5 py-1 rounded-full shadow font-mono">
+                    ISO 9001:2015 CERTIFIED
+                  </span>
+                </div>
+              </div>
+              <p className="text-[11px] text-neutral-400 font-mono text-center mt-2.5">
+                Official Admission Announcement · A-6 Butler Plaza Bareilly
               </p>
             </div>
-            <div className="flex items-center gap-1.5 text-xs font-mono text-cyan-300 bg-cyan-950/60 px-3 py-1.5 rounded-lg border border-cyan-800/60">
-              <Users className="w-4 h-4 text-cyan-400" />
-              <span>Small Batch Practical Learning</span>
-            </div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800 space-y-1.5">
-              <div className="text-[11px] font-mono uppercase text-cyan-400 font-semibold">Course Fee</div>
-              <div className="text-sm font-bold text-white">{COURSE_OVERVIEW.placeholders.feeStatus}</div>
-              <p className="text-xs text-neutral-400">{COURSE_OVERVIEW.placeholders.feeNote}</p>
-            </div>
+            {/* Right Column: Comprehensive Course Details & Offer (7 cols) */}
+            <div className="lg:col-span-7 space-y-6">
+              {/* Header Badges */}
+              <div className="space-y-2">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-950 text-cyan-300 border border-cyan-800 flex items-center gap-1.5 shadow-[0_0_10px_rgba(0,229,255,0.2)]">
+                    <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>ISO 9001:2015 Certified Institute</span>
+                  </span>
+                  <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-amber-950 text-amber-300 border border-amber-800 animate-pulse">
+                    ⚡ LIMITED SEATS — HURRY UP!
+                  </span>
+                </div>
 
-            <div className="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800 space-y-1.5">
-              <div className="text-[11px] font-mono uppercase text-amber-400 font-semibold">Course Duration</div>
-              <div className="text-sm font-bold text-white">{COURSE_OVERVIEW.placeholders.durationStatus}</div>
-              <p className="text-xs text-neutral-400">{COURSE_OVERVIEW.placeholders.durationNote}</p>
-            </div>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
+                  Learn Mobile Repairing in 2 Months
+                </h2>
+                <p className="text-sm sm:text-base text-cyan-300 font-medium">
+                  Complete 2-Month Practical Mobile Phone Hardware & Chip-Level Course
+                </p>
+              </div>
 
-            <div className="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800 space-y-1.5">
-              <div className="text-[11px] font-mono uppercase text-rose-400 font-semibold">Batch Size</div>
-              <div className="text-sm font-bold text-white">{COURSE_OVERVIEW.placeholders.batchSizeStatus}</div>
-              <p className="text-xs text-neutral-400">{COURSE_OVERVIEW.placeholders.batchSizeNote}</p>
-            </div>
+              {/* Price & Earning Highlight Box */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-5 rounded-2xl bg-neutral-900/90 border border-neutral-800">
+                <div className="space-y-1">
+                  <div className="text-xs font-mono text-neutral-400 uppercase tracking-wider">
+                    Course Fee:
+                  </div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl sm:text-4xl font-black text-amber-400 font-mono">
+                      ₹14,990/-
+                    </span>
+                    <span className="text-xs text-neutral-400 line-through">₹15,000</span>
+                  </div>
+                  <p className="text-[11px] text-neutral-300 font-medium">
+                    Special limited-time admission offer for complete 2-month training + ISO certificate
+                  </p>
+                </div>
 
-            <div className="p-4 rounded-xl bg-neutral-900/80 border border-neutral-800 space-y-1.5">
-              <div className="text-[11px] font-mono uppercase text-emerald-400 font-semibold">Class Timings</div>
-              <div className="text-sm font-bold text-white">{COURSE_OVERVIEW.placeholders.timingsStatus}</div>
-              <p className="text-xs text-neutral-400">{COURSE_OVERVIEW.placeholders.timingsNote}</p>
+                <div className="space-y-1 border-t sm:border-t-0 sm:border-l border-neutral-800 pt-3 sm:pt-0 sm:pl-4">
+                  <div className="text-xs font-mono text-neutral-400 uppercase tracking-wider">
+                    Earning Potential:
+                  </div>
+                  <div className="text-2xl sm:text-3xl font-black text-emerald-400 font-mono">
+                    ₹50,000 – ₹60,000
+                  </div>
+                  <p className="text-[11px] text-emerald-300 font-medium flex items-center gap-1">
+                    <TrendingUp className="w-3.5 h-3.5" />
+                    <span>Per month potential for skilled hardware technicians</span>
+                  </p>
+                </div>
+              </div>
+
+              {/* 4 Official Pillars from the Admission Poster */}
+              <div className="space-y-2.5">
+                <div className="text-xs font-mono uppercase tracking-wider text-neutral-400 font-semibold">
+                  Course Pillars & Laboratory Standards:
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                  <div className="p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 flex items-start gap-2.5">
+                    <GraduationCap className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-white block">Professional Trainer</span>
+                      <span className="text-neutral-400 text-[11px]">Experienced step-by-step guidance from senior lab technicians</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 flex items-start gap-2.5">
+                    <Cpu className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-white block">100% Practical Training</span>
+                      <span className="text-neutral-400 text-[11px]">Hands-on practice on real smartphone PCBs & test boards</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 flex items-start gap-2.5">
+                    <ShieldCheck className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-white block">ISO Certified Institute</span>
+                      <span className="text-neutral-400 text-[11px]">Recognized ISO 9001:2015 course completion certificate</span>
+                    </div>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 flex items-start gap-2.5">
+                    <TrendingUp className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold text-white block">High Income Opportunity</span>
+                      <span className="text-neutral-400 text-[11px]">Build skills to earn ₹50,000 – ₹60,000/month independently</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Course Logistics Quad */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs">
+                <div className="p-3 rounded-xl bg-neutral-900/80 border border-neutral-800">
+                  <div className="text-[10px] font-mono text-neutral-400 uppercase">Duration</div>
+                  <div className="font-bold text-cyan-300 mt-0.5">2 Months</div>
+                  <div className="text-[10px] text-neutral-500">60 Practical Days</div>
+                </div>
+
+                <div className="p-3 rounded-xl bg-neutral-900/80 border border-neutral-800">
+                  <div className="text-[10px] font-mono text-neutral-400 uppercase">Total Fee</div>
+                  <div className="font-bold text-amber-300 mt-0.5">₹14,990/-</div>
+                  <div className="text-[10px] text-neutral-500">Special Offer (₹15,000)</div>
+                </div>
+
+                <div className="p-3 rounded-xl bg-neutral-900/80 border border-neutral-800">
+                  <div className="text-[10px] font-mono text-neutral-400 uppercase">Batch Size</div>
+                  <div className="font-bold text-rose-300 mt-0.5">Limited Seats</div>
+                  <div className="text-[10px] text-neutral-500">Dedicated Microscope</div>
+                </div>
+
+                <div className="p-3 rounded-xl bg-neutral-900/80 border border-neutral-800">
+                  <div className="text-[10px] font-mono text-neutral-400 uppercase">Shifts</div>
+                  <div className="font-bold text-emerald-300 mt-0.5">Morning & Evening</div>
+                  <div className="text-[10px] text-neutral-500">Mon to Sat</div>
+                </div>
+              </div>
+
+              {/* CTAs */}
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <button
+                  onClick={() => onOpenEnquiry("training", "Admission for 2-Month Practical Course (₹14,990)")}
+                  className="px-6 py-3 text-xs font-bold text-neutral-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:brightness-110 rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-[0_0_15px_rgba(255,183,3,0.35)]"
+                >
+                  <Award className="w-4 h-4 text-neutral-950" />
+                  <span>Enroll in 2-Month Course (₹14,990)</span>
+                </button>
+
+                <a
+                  href={`tel:${INSTITUTE_CONFIG.contact.primaryPhoneRaw}`}
+                  className="px-4 py-3 text-xs font-mono font-semibold text-neutral-200 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 rounded-xl transition-colors flex items-center gap-2"
+                >
+                  <PhoneCall className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Call: {INSTITUTE_CONFIG.contact.primaryPhone}</span>
+                </a>
+
+                <a
+                  href={`tel:${INSTITUTE_CONFIG.contact.secondaryPhoneRaw}`}
+                  className="px-4 py-3 text-xs font-mono font-semibold text-neutral-200 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 rounded-xl transition-colors flex items-center gap-2"
+                >
+                  <PhoneCall className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Call: {INSTITUTE_CONFIG.contact.secondaryPhone}</span>
+                </a>
+              </div>
             </div>
           </div>
         </motion.div>

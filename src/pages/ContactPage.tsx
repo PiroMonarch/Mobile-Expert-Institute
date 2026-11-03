@@ -328,13 +328,23 @@ export const ContactPage: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <Phone className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold text-white block">Direct Telephone:</span>
-                    <a
-                      href={`tel:${INSTITUTE_CONFIG.contact.phonePlaceholder}`}
-                      className="mt-0.5 text-neutral-200 hover:text-amber-400 font-mono block transition-colors"
-                    >
-                      {INSTITUTE_CONFIG.contact.phoneDisplay}
-                    </a>
+                    <span className="font-semibold text-white block">Direct Telephone Numbers:</span>
+                    <div className="mt-1 space-y-1 font-mono text-xs">
+                      <a
+                        href={`tel:${INSTITUTE_CONFIG.contact.primaryPhoneRaw}`}
+                        className="text-neutral-200 hover:text-amber-400 flex items-center gap-1.5 transition-colors"
+                      >
+                        <span className="text-cyan-400 font-bold">•</span>
+                        <span>{INSTITUTE_CONFIG.contact.primaryPhone}</span>
+                      </a>
+                      <a
+                        href={`tel:${INSTITUTE_CONFIG.contact.secondaryPhoneRaw}`}
+                        className="text-neutral-200 hover:text-amber-400 flex items-center gap-1.5 transition-colors"
+                      >
+                        <span className="text-cyan-400 font-bold">•</span>
+                        <span>{INSTITUTE_CONFIG.contact.secondaryPhone}</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
 

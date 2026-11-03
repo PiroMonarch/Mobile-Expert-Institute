@@ -3,6 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Compatibility shim for browser extensions that attempt to intercept window.fetch
+      (function() {
+        try {
+          var originalFetch = window.fetch ? window.fetch.bind(window) : undefined;
+          var activeFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return activeFetch;
+            },
+            set: function(newFetch) {
+              activeFetch = newFetch;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {}
+
+        // Suppress external browser extension script errors from polluting the app
+        window.addEventListener('error', function(e) {
+          if (e && e.filename && e.filename.indexOf('chrome-extension://') !== -1) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+          }
+        }, true);
+      })();
+    </script>
     <title>Mobile Expert Institute | Mobile Phone Repairing Training in Bareilly</title>
     <meta
       name="description"
@@ -50,6 +77,7 @@
         "@type": "EducationalOrganization",
         "name": "Mobile Expert Institute",
         "description": "Professional mobile phone repairing training institute providing practical technical education, live demonstrations, and motherboard diagnostics.",
+        "telephone": ["+91-9758652851", "+91-6395468506"],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "A-6, Butler Plaza, Civil Lines",
